@@ -1,0 +1,23 @@
+chmod +x /root/devops/CPU-monitor.sh
+
+crontab -e
+* * * * * /root/devops/CPU-monitor.sh >> /var/log/cpu-monitor.log 2>&1
+
+* * * * *
+| | | | |
+| | | | +---- Day of week
+| | | +------ Month
+| | +-------- Day of month
+| +---------- Hour
++------------ Minute
+
+systemctl status cron
+
+systemctl start cron
+systemctl enable cron
+
+#verify the crob tab
+
+crontab -l
+
+
